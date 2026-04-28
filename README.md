@@ -56,16 +56,17 @@ VibeSense combines computer vision and machine learning to understand human emot
 ## ▶️ How to Run the Project
 1. Clone the repository  
    ```bash
-   git clone https://github.com/Suhani-Jain42/VibeSense-.git
+   git clone https://github.com/PriyaChandra7/Emotion-Based-Music-Recommendation-System.git
+   cd Emotion-Based-Music-Recommendation-System
 2. Install required libraries
 pip install -r requirements.txt
 3. Run the project
-python main.py
+python data_inference.py
 4. Allow webcam access and follow on-screen instructions
 
 👩‍💻 Author
-Suhani Jain
-Machine Learning Enthusiast
+Priya Chandra
+B.Tech CSE(AI & ML)
 
 ⭐ Acknowledgement
 This project was developed for academic and learning purposes to explore emotion recognition and personalized music recommendation using machine learning.
