@@ -4,7 +4,7 @@ from tensorflow.keras.utils import to_categorical
 from keras.layers import Input, Dense 
 from keras.models import Model
 
-# ---- Step 1: Load .npy Data Files ----
+#Step 1: Load .npy Data Files
 is_init = False
 label = []
 dictionary = {}
@@ -29,7 +29,7 @@ for filename in os.listdir():
         dictionary[filename.split('.')[0]] = c
         c += 1
 
-# ---- Step 2: Encode Labels ----
+# Step 2: Encode Labels 
 # Convert string labels to integers
 for i in range(y.shape[0]):
     y[i, 0] = dictionary[y[i, 0]]
@@ -38,7 +38,7 @@ y = np.array(y, dtype="int32")
 # One-hot encode labels
 y = to_categorical(y)
 
-# ---- Step 3: Shuffle Data ----
+# Step 3: Shuffle Data
 X_new = np.empty_like(X)
 y_new = np.empty_like(y)
 indices = np.arange(X.shape[0])
@@ -48,8 +48,8 @@ for i, idx in enumerate(indices):
     X_new[i] = X[idx]
     y_new[i] = y[idx]
 
-# ---- Step 4: Define the Model ----
-input_shape = (X.shape[1],)  # ✅ Fix: Input shape must be a tuple
+# Step 4: Define the Model
+input_shape = (X.shape[1],)  
 ip = Input(shape=input_shape)
 
 m = Dense(512, activation="relu")(ip)
@@ -59,10 +59,10 @@ op = Dense(y.shape[1], activation="softmax")(m)
 model = Model(inputs=ip, outputs=op)
 model.compile(optimizer='rmsprop', loss="categorical_crossentropy", metrics=['acc'])
 
-# ---- Step 5: Train the Model ----
+# Step 5: Train the Model
 model.fit(X_new, y_new, epochs=50, batch_size=32)
 
-# ---- Step 6: Save the Model and Labels ----
+# Step 6: Save the Model and Labels 
 model.save("model.h5")
 np.save("labels.npy", np.array(label))
 
