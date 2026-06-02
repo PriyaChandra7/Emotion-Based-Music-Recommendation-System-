@@ -66,4 +66,4 @@ model.fit(X_new, y_new, epochs=50, batch_size=32)
 model.save("model.h5")
 np.save("labels.npy", np.array(label))
 
-print("✅ Training complete. Model saved as 'model.h5' and labels as 'labels.npy'")
+print("Training complete. Model saved as 'model.h5' and labels as 'labels.npy'")
