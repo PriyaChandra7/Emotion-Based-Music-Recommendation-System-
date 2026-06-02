@@ -17,7 +17,7 @@ VibeSense combines computer vision and machine learning to understand human emot
 - Angry  
 - Neutral  
 - Surprise  
-- Fear  
+- Rock
 
 ## 🛠️ Technologies Used
 - **Programming Language:** Python  
