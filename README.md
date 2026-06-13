@@ -17,19 +17,19 @@ It combines computer vision and machine learning to understand human emotions th
 - Angry  
 - Neutral  
 - Surprise
-- 
 
 ## Technologies Used
 - **Programming Language:** Python  
 - **Machine Learning:** Deep Learning (Dense Neural Network using Keras/TensorFlow)
 - **Computer Vision:** OpenCV/ Mediapipe Holistic  
-- **Libraries:** NumPy, TensorFlow, Keras
-- **Hardware:** Webcam  
+- **Libraries:** NumPy, TensorFlow, Keras, Mediapipe, Streamlit
+- **Hardware:** Webcam
+- **Frontend/UI:** Streamlit
 
 ## Workflow
 1. Webcam captures the user's facial expression  
 2. Face detection and preprocessing are performed  
-3. Emotion is classified using a trained ML model  
+3. User expressions are classified using a trained deep learning model
 4. User selects preferred language and singer  
 5. System recommends songs based on detected mood  
 6. Results are displayed to the user  
@@ -37,7 +37,7 @@ It combines computer vision and machine learning to understand human emotions th
 ## Dataset
 - Custom dataset collected using a webcam and MediaPipe Holistic.
 - Facial, hand and pose landmark coordinates were stored as NumPy files.
-- Samples were labeled into six classes.
+- Samples were labeled into classes.
 - Landmark coordinates were normalized relative to reference points before model training.
 
 ## Features
